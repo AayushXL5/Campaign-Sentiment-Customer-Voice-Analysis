@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Campaign Sentiment & Customer Voice Analysis Dashboard">
+    <title>Campaign Sentiment & Customer Voice Analysis</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="app-container">
+
+    <!-- Header -->
+    <header class="app-header">
+        <div class="app-logo">
+            <div class="app-logo-icon">CV</div>
+            <div>
+                <h1>Campaign Sentiment &amp; Customer Voice</h1>
+                <p>Automated Analysis Pipeline</p>
+            </div>
+        </div>
+        <div class="header-actions">
+            <div class="pipeline-status"><span class="status-dot"></span><span id="header-status">Loading...</span></div>
+            <a href="/export/reviews" download="cleaned_reviews.csv" class="btn btn-sm">⬇ Export Reviews CSV</a>
+            <a href="/export/campaigns" download="campaigns.csv" class="btn btn-sm">⬇ Export Campaigns CSV</a>
+            <a href="/export/voice" download="voice_analysis.csv" class="btn btn-sm">⬇ Export Voice CSV</a>
+        </div>
+    </header>
+
+    <!-- Tabs -->
+    <nav class="tab-nav">
+        <button class="tab-btn active" data-tab="tab-sentiment" onclick="switchTab('tab-sentiment')">Campaign Sentiment</button>
+        <button class="tab-btn" data-tab="tab-voice" onclick="switchTab('tab-voice')">Customer Voice</button>
+        <button class="tab-btn" data-tab="tab-data" onclick="switchTab('tab-data')">Data Explorer</button>
+    </nav>
+
+    <!-- ═══ TAB 1: CAMPAIGN SENTIMENT ═══ -->
+    <div id="tab-sentiment" class="tab-content active">
+
+        <!-- Filters -->
+        <div class="filter-bar">
+            <div class="filter-group">
+                <span class="filter-label">Product</span>
+                <select class="filter-select" id="f-product" onchange="applyFilters()"><option value="">All Products</option></select>
+            </div>
+            <div class="filter-group">
+                <span class="filter-label">Sentiment</span>
+                <select class="filter-select" id="f-sentiment" onchange="applyFilters()">
+                    <option value="">All</option><option value="Positive">Positive</option>
+                    <option value="Negative">Negative</option><option value="Neutral">Neutral</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <span class="filter-label">Season</span>
+                <select class="filter-select" id="f-season" onchange="applyFilters()">
+                    <option value="">All Seasons</option><option value="Winter">Winter</option>
+                    <option value="Spring">Spring</option><option value="Summer">Summer</option><option value="Fall">Fall</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <span class="filter-label">Source</span>
+                <select class="filter-select" id="f-source" onchange="applyFilters()"><option value="">All Sources</option></select>
+            </div>
+            <div class="filter-group">
+                <span class="filter-label">Rating</span>
+                <select class="filter-select" id="f-rating" onchange="applyFilters()">
+                    <option value="">All Ratings</option><option value="5">★★★★★</option><option value="4">★★★★</option>
+                    <option value="3">★★★</option><option value="2">★★</option><option value="1">★</option>
+                </select>
+            </div>
+            <button class="filter-reset" onclick="resetFilters()">Reset Filters</button>
+            <span class="filter-count" id="filter-count"></span>
+        </div>
+
+        <!-- KPIs -->
+        <div class="kpi-strip" id="kpi-strip-sentiment"></div>
+
+        <!-- Row 1 -->
+        <div class="grid grid-2">
+            <div class="card">
+                <div class="card-head">
+                    <div><div class="card-title">Sentiment Distribution</div><div class="card-sub">Filtered results breakdown</div></div>
+                    <span class="card-badge">VADER</span>
+                </div>
+                <div class="chart-wrap"><canvas id="chart-sentiment-dist"></canvas></div>
+            </div>
+            <div class="card">
+                <div class="card-head">
+                    <div><div class="card-title">Product Sentiment</div><div class="card-sub">Positive vs Negative % by product</div></div>
+                </div>
+                <div class="chart-wrap"><canvas id="chart-product-sentiment"></canvas></div>
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="grid grid-2">
+            <div class="card">
+                <div class="card-head">
+                    <div><div class="card-title">Review Volume Over Time</div><div class="card-sub">Ski Boots +150% spike in winter</div></div>
+                    <span class="card-badge">+150%</span>
+                </div>
+                <div class="chart-wrap"><canvas id="chart-volume"></canvas></div>
+            </div>
+            <div class="card">
+                <div class="card-head">
+                    <div><div class="card-title">Conversion Rebound</div><div class="card-sub">5.0% → 18.5% after sentiment-driven optimization</div></div>
+                    <span class="card-badge">↑ 270%</span>
+                </div>
+                <div class="chart-wrap"><canvas id="chart-conversion"></canvas></div>
+            </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="grid grid-2">
+            <div class="card">
+                <div class="card-head">
+                    <div><div class="card-title">Campaign Performance</div><div class="card-sub">CTR & Conversion by campaign</div></div>
+                </div>
+                <div class="chart-wrap lg"><canvas id="chart-campaigns"></canvas></div>
+            </div>
+            <div class="card">
+                <div class="card-head">
+                    <div><div class="card-title">Sentiment by Season</div><div class="card-sub">Average compound score per season</div></div>
+                </div>
+                <div class="chart-wrap"><canvas id="chart-seasonal"></canvas></div>
+            </div>
+        </div>
+
+        <!-- Filtered Reviews Table -->
+        <div class="card">
+            <div class="card-head">
+                <div><div class="card-title">Filtered Reviews</div><div class="card-sub" id="filtered-reviews-count">Showing all reviews</div></div>
+                <button class="btn btn-sm" onclick="exportFilteredCSV()">⬇ Export Filtered CSV</button>
+            </div>
+            <div class="table-controls">
+                <input type="text" class="table-search" id="review-search" placeholder="Search reviews..." oninput="filterReviewTable()">
+            </div>
+            <div class="table-scroll">
+                <table class="data-table" id="reviews-table">
+                    <thead><tr>
+                        <th onclick="sortTable(0)">Date</th><th onclick="sortTable(1)">Product</th>
+                        <th onclick="sortTable(2)">Rating</th><th>Review</th>
+                        <th onclick="sortTable(4)">Sentiment</th><th onclick="sortTable(5)">Score</th>
+                        <th onclick="sortTable(6)">Source</th>
+                    </tr></thead>
+                    <tbody id="reviews-tbody"></tbody>
+                </table>
+            </div>
+            <div class="table-footer">
+                <span id="table-info">Showing 0 of 0</span>
+                <div class="pagination" id="pagination"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ TAB 2: CUSTOMER VOICE ═══ -->
+    <div id="tab-voice" class="tab-content">
+        <div class="kpi-strip" id="kpi-strip-voice"></div>
+
+        <div class="grid grid-2">
+            <div class="card">
+                <div class="card-head">
+                    <div><div class="card-title">Customer Voice — Theme Cloud</div><div class="card-sub">Size = mentions, Color = sentiment</div></div>
+                    <span class="card-badge">NLP</span>
+                </div>
+                <div class="cloud-container" id="theme-cloud"></div>
+            </div>
+            <div class="card">
+                <div class="card-head">
+                    <div><div class="card-title">Aspect Sentiment Matrix</div><div class="card-sub">Sentiment per product x attribute</div></div>
+                </div>
+                <div class="table-scroll"><table class="matrix"><thead><tr id="matrix-head"></tr></thead><tbody id="matrix-body"></tbody></table></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-head">
+                <div><div class="card-title">What Customers Love vs. Hate</div><div class="card-sub">Verbatim quotes from reviews</div></div>
+            </div>
+            <div class="split-grid">
+                <div><div class="panel-title love">♥ Customers Love</div><div id="love-list"></div></div>
+                <div><div class="panel-title hate">✕ Customers Dislike</div><div id="hate-list"></div></div>
+            </div>
+        </div>
+
+        <div class="grid grid-2">
+            <div class="card">
+                <div class="card-head">
+                    <div><div class="card-title">Pain Point Tracker</div><div class="card-sub">Ranked by frequency with recommended actions</div></div>
+                </div>
+                <div id="pain-points-list"></div>
+            </div>
+            <div class="card">
+                <div class="card-head">
+                    <div><div class="card-title">Customer Segments (NPS)</div><div class="card-sub">Promoters / Passives / Detractors</div></div>
+                </div>
+                <div class="chart-wrap sm"><canvas id="chart-segments"></canvas></div>
+                <div class="seg-grid" id="seg-grid" style="margin-top:14px"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-head">
+                <div><div class="card-title">Actionable Campaign Insights</div><div class="card-sub">Auto-generated recommendations from voice data</div></div>
+                <span class="card-badge">AI-Generated</span>
+            </div>
+            <div class="insight-grid" id="insight-grid"></div>
+        </div>
+    </div>
+
+    <!-- ═══ TAB 3: DATA EXPLORER ═══ -->
+    <div id="tab-data" class="tab-content">
+        <div class="card">
+            <div class="card-head">
+                <div><div class="card-title">Full Dataset — Cleaned Reviews</div><div class="card-sub">All 670 reviews with sentiment scores. Sort any column, search, and export.</div></div>
+                <div style="display:flex;gap:8px;">
+                    <a href="/export/reviews" download="cleaned_reviews.csv" class="btn btn-primary btn-sm">⬇ Download Full CSV</a>
+                    <a href="/export/all" download="campaign_voice_data.zip" class="btn btn-sm">⬇ Download All Data (ZIP)</a>
+                </div>
+            </div>
+            <div class="table-controls">
+                <input type="text" class="table-search" id="explorer-search" placeholder="Search across all fields..." oninput="filterExplorerTable()">
+                <span id="explorer-count" class="filter-count"></span>
+            </div>
+            <div class="table-scroll" style="max-height:600px">
+                <table class="data-table" id="explorer-table">
+                    <thead><tr>
+                        <th onclick="sortExplorer(0)">ID</th><th onclick="sortExplorer(1)">Date</th>
+                        <th onclick="sortExplorer(2)">Customer</th><th onclick="sortExplorer(3)">Product</th>
+                        <th onclick="sortExplorer(4)">Category</th><th onclick="sortExplorer(5)">Rating</th>
+                        <th>Review</th><th onclick="sortExplorer(7)">Sentiment</th>
+                        <th onclick="sortExplorer(8)">Compound</th><th onclick="sortExplorer(9)">Pos</th>
+                        <th onclick="sortExplorer(10)">Neg</th><th onclick="sortExplorer(11)">Source</th>
+                    </tr></thead>
+                    <tbody id="explorer-tbody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="grid grid-2">
+            <div class="card">
+                <div class="card-head">
+                    <div><div class="card-title">Campaign Metrics</div><div class="card-sub">Performance data for all campaigns</div></div>
+                    <a href="/export/campaigns" download="campaigns.csv" class="btn btn-sm">⬇ CSV</a>
+                </div>
+                <div class="table-scroll">
+                    <table class="data-table" id="campaigns-table">
+                        <thead><tr><th>Campaign</th><th>Season</th><th>Impressions</th><th>Clicks</th><th>CTR</th><th>Conversions</th><th>Conv%</th><th>Spend</th></tr></thead>
+                        <tbody id="campaigns-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-head">
+                    <div><div class="card-title">Voice Analysis Summary</div><div class="card-sub">Pain points, segments, themes</div></div>
+                    <a href="/export/voice" download="voice_analysis.csv" class="btn btn-sm">⬇ CSV</a>
+                </div>
+                <div class="table-scroll">
+                    <table class="data-table" id="voice-table">
+                        <thead><tr><th>Pain Point</th><th>Product</th><th>Frequency</th><th>Severity</th><th>Recommended Action</th></tr></thead>
+                        <tbody id="voice-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="/static/js/dashboard.js"></script>
+</body>
+</html>

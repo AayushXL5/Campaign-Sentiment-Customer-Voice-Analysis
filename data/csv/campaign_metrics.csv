@@ -1,0 +1,40 @@
+campaign_id,campaign_name,product_category,season,total_reviews,avg_sentiment,positive_pct,negative_pct,ctr,conversion_rate,review_volume_change_pct
+CAMP-001,Winter Kickoff 2024,Footwear,Fall,22,0.20669545454545454,50.0,27.3,7.0,5.0,0.0
+CAMP-001,Winter Kickoff 2024,Footwear,Fall,10,0.51198,90.0,0.0,7.0,5.0,0.0
+CAMP-001,Winter Kickoff 2024,Footwear,Fall,5,0.34728,60.0,20.0,7.0,5.0,0.0
+CAMP-001,Winter Kickoff 2024,Footwear,Fall,9,0.3666111111111111,77.8,22.2,7.0,5.0,0.0
+CAMP-001,Winter Kickoff 2024,Footwear,Fall,14,0.24083571428571426,64.3,35.7,7.0,5.0,0.0
+CAMP-001,Winter Kickoff 2024,Footwear,Fall,1,0.4019,100.0,0.0,7.0,5.0,0.0
+CAMP-002,Holiday Gear Sale,Apparel,Winter,7,0.21384285714285714,42.9,42.9,9.0,6.0,-68.2
+CAMP-002,Holiday Gear Sale,Apparel,Winter,27,0.2972888888888889,63.0,25.9,9.0,6.0,170.0
+CAMP-002,Holiday Gear Sale,Apparel,Winter,2,0.25444999999999995,50.0,50.0,9.0,6.0,-60.0
+CAMP-002,Holiday Gear Sale,Apparel,Winter,1,0.8481,100.0,0.0,9.0,6.0,-88.9
+CAMP-002,Holiday Gear Sale,Apparel,Winter,1,-0.1295,0.0,100.0,9.0,6.0,0.0
+CAMP-003,Ski Season Blitz,Footwear,Winter,48,0.42902916666666663,79.2,18.8,15.4,18.5,585.7
+CAMP-003,Ski Season Blitz,Footwear,Winter,17,0.3397647058823529,70.6,23.5,15.4,18.5,-37.0
+CAMP-003,Ski Season Blitz,Footwear,Winter,1,0.6808,100.0,0.0,15.4,18.5,-50.0
+CAMP-003,Ski Season Blitz,Footwear,Winter,2,0.6272500000000001,100.0,0.0,15.4,18.5,100.0
+CAMP-003,Ski Season Blitz,Footwear,Winter,8,0.325275,75.0,25.0,15.4,18.5,-42.9
+CAMP-003,Ski Season Blitz,Footwear,Winter,3,-0.307,33.3,66.7,15.4,18.5,200.0
+CAMP-004,Spring Trail Ready,Footwear,Spring,9,0.37762222222222225,66.7,22.2,12.0,15.0,-81.3
+CAMP-004,Spring Trail Ready,Footwear,Spring,6,0.49866666666666665,83.3,16.7,12.0,15.0,-64.7
+CAMP-004,Spring Trail Ready,Footwear,Spring,8,0.3610875,62.5,25.0,12.0,15.0,700.0
+CAMP-004,Spring Trail Ready,Footwear,Spring,2,0.6415500000000001,100.0,0.0,12.0,15.0,0.0
+CAMP-004,Spring Trail Ready,Footwear,Spring,29,0.28894137931034486,69.0,27.6,12.0,15.0,262.5
+CAMP-004,Spring Trail Ready,Footwear,Spring,12,0.23365000000000002,58.3,33.3,12.0,15.0,300.0
+CAMP-005,Summer Adventure Push,Equipment,Summer,4,0.344875,75.0,25.0,13.0,16.0,-33.3
+CAMP-005,Summer Adventure Push,Equipment,Summer,43,0.34293023255813954,67.4,20.9,13.0,16.0,437.5
+CAMP-005,Summer Adventure Push,Equipment,Summer,10,0.10591000000000002,60.0,40.0,13.0,16.0,400.0
+CAMP-005,Summer Adventure Push,Equipment,Summer,14,0.5712928571428572,85.7,14.3,13.0,16.0,-51.7
+CAMP-005,Summer Adventure Push,Equipment,Summer,40,0.3245975,65.0,27.5,13.0,16.0,233.3
+CAMP-006,Back-to-Trail Fall,Accessories,Fall,1,-0.7501,0.0,100.0,12.0,15.0,-97.7
+CAMP-006,Back-to-Trail Fall,Accessories,Fall,7,0.4580285714285714,85.7,14.3,12.0,15.0,-30.0
+CAMP-006,Back-to-Trail Fall,Accessories,Fall,1,-0.8268,0.0,100.0,12.0,15.0,-92.9
+CAMP-006,Back-to-Trail Fall,Accessories,Fall,1,0.3612,100.0,0.0,12.0,15.0,-97.5
+CAMP-007,Peak Season Climbers,Equipment,Summer,4,0.5272,100.0,0.0,11.0,16.0,-55.6
+CAMP-007,Peak Season Climbers,Equipment,Summer,1,0.937,100.0,0.0,11.0,16.0,-75.0
+CAMP-007,Peak Season Climbers,Equipment,Summer,1,0.5994,100.0,0.0,11.0,16.0,0.0
+CAMP-007,Peak Season Climbers,Equipment,Summer,3,0.5969333333333333,100.0,0.0,11.0,16.0,-57.1
+CAMP-007,Peak Season Climbers,Equipment,Summer,3,0.2999,66.7,33.3,11.0,16.0,200.0
+CAMP-007,Peak Season Climbers,Equipment,Summer,5,0.14526,40.0,40.0,11.0,16.0,400.0
+CAMP-008,Winter Warmth Revival,Apparel,Winter,0,0.0,0.0,0.0,14.0,17.0,0.0

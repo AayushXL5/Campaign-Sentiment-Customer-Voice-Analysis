@@ -1,0 +1,59 @@
+id,theme,theme_category,mention_count,avg_sentiment,product_name
+1,support,Performance,20,0.3507,Alpine Pro Ski Boots
+2,ankle support,Performance,20,0.3507,Alpine Pro Ski Boots
+3,customer service,Service,25,-0.6157,Alpine Pro Ski Boots
+4,helpful,Service,25,-0.6157,Alpine Pro Ski Boots
+5,fit,Comfort & Fit,68,0.4112,ArcticShield Winter Jacket
+6,sizing,Comfort & Fit,31,0.1021,ArcticShield Winter Jacket
+7,break-in,Comfort & Fit,7,0.762,ArcticShield Winter Jacket
+8,worth,Value,73,0.289,ArcticShield Winter Jacket
+9,penny,Value,31,0.4841,ArcticShield Winter Jacket
+10,durability,Product Quality,101,0.2813,Alpine Pro Ski Boots
+11,size,Comfort & Fit,18,0.6042,VerticalEdge Climbing Harness
+12,price,Value,161,0.2978,ArcticShield Winter Jacket
+13,money,Value,35,0.7064,ArcticShield Winter Jacket
+14,premium,Value,78,0.1015,ArcticShield Winter Jacket
+15,markup,Value,11,-0.2994,Alpine Pro Ski Boots
+16,return,Service,26,0.1477,ArcticShield Winter Jacket
+17,warmth,Performance,38,0.6075,ArcticShield Winter Jacket
+18,warm,Performance,38,0.6075,ArcticShield Winter Jacket
+19,dry,Performance,24,0.5529,ArcticShield Winter Jacket
+20,overpriced,Value,9,-0.302,Alpine Pro Ski Boots
+21,quality,Product Quality,145,0.0772,TrailBlazer Running Shoes
+22,build,Product Quality,63,0.4267,TrailBlazer Running Shoes
+23,solid,Product Quality,34,0.4043,Summit Hiking Backpack
+24,material,Product Quality,9,-0.3462,Alpine Pro Ski Boots
+25,peeling,Product Quality,9,-0.3462,Alpine Pro Ski Boots
+26,value,Value,21,0.8603,TrailBlazer Running Shoes
+27,fair price,Value,19,0.6288,Alpine Pro Ski Boots
+28,fell apart,Product Quality,6,0.0975,Alpine Pro Ski Boots
+29,stitching,Product Quality,6,0.0267,Alpine Pro Ski Boots
+30,snug,Comfort & Fit,6,0.3836,Alpine Pro Ski Boots
+31,built,Product Quality,13,0.3454,VerticalEdge Climbing Harness
+32,insulation,Performance,13,0.6595,ArcticShield Winter Jacket
+33,rain,Performance,18,0.2343,Summit Hiking Backpack
+34,cold,Performance,10,0.376,Alpine Pro Ski Boots
+35,fits,Comfort & Fit,19,0.7327,ArcticShield Winter Jacket
+36,dollar,Value,18,0.5426,Summit Hiking Backpack
+37,comfort,Comfort & Fit,59,0.436,Summit Hiking Backpack
+38,comfortable,Comfort & Fit,15,0.4399,VerticalEdge Climbing Harness
+39,true to size,Comfort & Fit,8,0.8869,VerticalEdge Climbing Harness
+40,durable,Product Quality,11,0.0285,FlameKing Camp Stove
+41,construction,Product Quality,10,0.1058,FlameKing Camp Stove
+42,waterproof,Performance,38,0.3049,ArcticShield Winter Jacket
+43,waterproofing,Performance,38,0.3049,ArcticShield Winter Jacket
+44,tight,Comfort & Fit,13,-0.2036,ArcticShield Winter Jacket
+45,breathability,Performance,38,0.3134,ArcticShield Winter Jacket
+46,airflow,Performance,9,0.7796,TrailBlazer Running Shoes
+47,sweat,Performance,12,0.3065,ArcticShield Winter Jacket
+48,heat,Performance,8,0.5592,TrailBlazer Running Shoes
+49,reliable,Performance,5,0.3361,FlameKing Camp Stove
+50,cushioning,Comfort & Fit,8,0.707,Summit Hiking Backpack
+51,cushion,Comfort & Fit,8,0.707,Summit Hiking Backpack
+52,blisters,Comfort & Fit,5,0.4264,Summit Hiking Backpack
+53,hot spots,Comfort & Fit,10,0.7456,Summit Hiking Backpack
+54,discomfort,Comfort & Fit,4,0.645,Summit Hiking Backpack
+55,padding,Comfort & Fit,7,-0.3905,TrailBlazer Running Shoes
+56,pressure,Comfort & Fit,4,-0.7635,VerticalEdge Climbing Harness
+57,grip,Performance,18,0.3284,TrailBlazer Running Shoes
+58,traction,Performance,13,0.5875,TrailBlazer Running Shoes

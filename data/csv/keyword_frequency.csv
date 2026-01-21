@@ -1,0 +1,121 @@
+id,keyword,frequency,avg_sentiment,product_name,is_bigram
+1,price,212,0.2978,,0
+2,quality,153,0.0772,,0
+3,weight,118,0.2449,,0
+4,durability,101,0.2813,,0
+5,gear,80,0.7563,,0
+6,premium,79,0.1015,,0
+7,worth,75,0.289,,0
+8,fit,62,0.4001,,0
+9,comfort,61,0.3652,,0
+10,expectations,60,0.2693,,0
+11,great,60,0.8667,,0
+12,recommend,59,0.3464,,0
+13,nothing,57,-0.1321,,0
+14,winter,56,0.6162,,0
+15,build,56,0.4075,,0
+16,serious,54,0.6953,,0
+17,season,54,0.6974,,0
+18,perfect,51,0.8765,,0
+19,average,51,0.3529,,0
+20,enough,48,0.0321,,0
+21,outstanding,47,0.8183,,0
+22,breathability,47,0.3134,,0
+23,waterproofing,46,0.3049,,0
+24,okay,44,0.4891,,0
+25,adventures,44,0.8947,,0
+26,better,42,0.1078,,0
+27,warmth,42,0.6075,,0
+28,needed,41,0.4599,,0
+29,best,41,0.8129,,0
+30,purchase,41,0.8129,,0
+31,pleasantly,40,0.7404,,0
+32,surprised,40,0.7404,,0
+33,impressed,40,0.7721,,0
+34,highly,40,0.7721,,0
+35,anyone,40,0.7721,,0
+36,outdoor,40,0.7721,,0
+37,exceeded,37,0.3231,,0
+38,casual,36,0.4975,,0
+39,money,35,0.7064,,0
+40,mixed,35,0.587,,0
+41,feelings,35,0.587,,0
+42,improved,35,0.587,,0
+43,exactly,34,0.4043,,0
+44,solid,34,0.4043,,0
+45,overall,34,0.4043,,0
+46,say,34,-0.0391,,0
+47,good,34,-0.0391,,0
+48,things,34,-0.0391,,0
+49,support,32,0.3507,,0
+50,issues,32,0.2634,,0
+51,uses,32,-0.1993,,0
+52,five,31,0.4841,,0
+53,stars,31,0.4841,,0
+54,sizing,31,0.1021,,0
+55,penny,31,0.4841,,0
+56,competitors,31,0.3407,,0
+57,extensive,31,0.8398,,0
+58,testing,31,0.8398,,0
+59,holds,31,0.8398,,0
+60,beautifully,31,0.8398,,0
+61,satisfied,31,0.8398,,0
+62,summer,30,0.5677,,0
+63,decent,30,-0.3905,,0
+64,special,30,-0.3905,,0
+65,gets,30,-0.3905,,0
+66,job,30,-0.3905,,0
+67,done,30,-0.3905,,0
+68,excellent,30,0.8361,,0
+69,ankle,29,0.3507,,0
+70,exceptional,28,0.4128,,0
+71,feet,27,0.5569,,0
+72,fuel,27,0.4476,,0
+73,major,26,0.1477,,0
+74,letdown,26,0.1477,,0
+75,considering,26,0.1477,,0
+76,returning,26,0.1477,,0
+77,box,26,0.3123,,0
+78,frustrated,25,-0.6157,,0
+79,customer,25,-0.6157,,0
+80,service,25,-0.6157,,0
+81,build quality,56,0.0,,1
+82,premium quality,53,0.0,,1
+83,best purchase,41,0.0,,1
+84,purchase season,41,0.0,,1
+85,pleasantly surprised,40,0.0,,1
+86,highly recommend,40,0.0,,1
+87,recommend anyone,40,0.0,,1
+88,anyone serious,40,0.0,,1
+89,serious outdoor,40,0.0,,1
+90,outdoor gear,40,0.0,,1
+91,exceeded expectations,37,0.0,,1
+92,mixed feelings,35,0.0,,1
+93,exactly needed,34,0.0,,1
+94,solid build,34,0.0,,1
+95,quality overall,34,0.0,,1
+96,say enough,34,0.0,,1
+97,enough good,34,0.0,,1
+98,good things,34,0.0,,1
+99,five stars,31,0.0,,1
+100,worth penny,31,0.0,,1
+101,extensive testing,31,0.0,,1
+102,holds beautifully,31,0.0,,1
+103,okay casual,30,0.0,,1
+104,decent nothing,30,0.0,,1
+105,nothing special,30,0.0,,1
+106,gets job,30,0.0,,1
+107,job done,30,0.0,,1
+108,ankle support,29,0.0,,1
+109,worth premium,26,0.0,,1
+110,major letdown,26,0.0,,1
+111,considering returning,26,0.0,,1
+112,customer service,25,0.0,,1
+113,service helpful,25,0.0,,1
+114,helpful either,25,0.0,,1
+115,still going,24,0.0,,1
+116,going strong,24,0.0,,1
+117,strong hundreds,24,0.0,,1
+118,hundreds miles,24,0.0,,1
+119,meets basic,23,0.0,,1
+120,basic expectations,23,0.0,,1

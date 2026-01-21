@@ -1,0 +1,9 @@
+campaign_id,campaign_name,product_category,start_date,end_date,impressions,clicks,conversions,spend,season
+CAMP-001,Winter Kickoff 2024,Footwear,2024-10-01,2024-11-30,45000,3150,158,8500.0,Fall
+CAMP-002,Holiday Gear Sale,Apparel,2024-12-01,2024-12-31,62000,5580,335,12000.0,Winter
+CAMP-003,Ski Season Blitz,Footwear,2025-01-01,2025-02-28,85000,13090,2422,18500.0,Winter
+CAMP-004,Spring Trail Ready,Footwear,2025-03-01,2025-04-30,38000,4560,684,7200.0,Spring
+CAMP-005,Summer Adventure Push,Equipment,2025-05-01,2025-07-31,52000,6760,1081,11000.0,Summer
+CAMP-006,Back-to-Trail Fall,Accessories,2025-08-01,2025-09-30,41000,4920,738,8800.0,Fall
+CAMP-007,Peak Season Climbers,Equipment,2025-06-01,2025-08-31,29000,3190,510,6500.0,Summer
+CAMP-008,Winter Warmth Revival,Apparel,2025-10-01,2025-12-31,55000,7700,1309,14000.0,Winter
