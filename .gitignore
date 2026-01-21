@@ -9,6 +9,7 @@ build/
 env/
 venv/
 *.db
+!data/campaign_voice.db
 !data/csv/
 .DS_Store
 Thumbs.db
