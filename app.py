@@ -78,7 +78,7 @@ def api_data():
     return jsonify(data)
 
 # ── CSV Exports ──────────────────────────────────────────────────
-@app.route('/export/reviews')
+@app.route('/export/reviews.csv')
 def export_reviews():
     conn = get_db()
     cursor = conn.execute("SELECT * FROM cleaned_reviews ORDER BY review_date DESC")
@@ -91,7 +91,7 @@ def export_reviews():
     for r in rows: w.writerow(list(r))
     return Response(si.getvalue(), mimetype='text/csv', headers={'Content-Disposition': 'attachment; filename="cleaned_reviews.csv"'})
 
-@app.route('/export/campaigns')
+@app.route('/export/campaigns.csv')
 def export_campaigns():
     conn = get_db()
     cursor = conn.execute("SELECT * FROM campaigns ORDER BY start_date")
@@ -104,7 +104,7 @@ def export_campaigns():
     for r in rows: w.writerow(list(r))
     return Response(si.getvalue(), mimetype='text/csv', headers={'Content-Disposition': 'attachment; filename="campaigns.csv"'})
 
-@app.route('/export/voice')
+@app.route('/export/voice.csv')
 def export_voice():
     conn = get_db()
     tables = {'pain_points': 'pain_points', 'aspect_sentiment': 'aspect_sentiment',
@@ -122,7 +122,7 @@ def export_voice():
     conn.close()
     return Response(si.getvalue(), mimetype='text/csv', headers={'Content-Disposition': 'attachment; filename="voice_analysis.csv"'})
 
-@app.route('/export/all')
+@app.route('/export/all.zip')
 def export_all():
     conn = get_db()
     buf = io.BytesIO()
