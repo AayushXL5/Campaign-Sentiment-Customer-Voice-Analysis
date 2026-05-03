@@ -89,7 +89,7 @@ def export_reviews():
     w = csv.writer(si)
     w.writerow(cols)
     for r in rows: w.writerow(list(r))
-    return Response(si.getvalue(), mimetype='text/csv', headers={'Content-Disposition': 'attachment;filename=cleaned_reviews.csv'})
+    return Response(si.getvalue(), mimetype='text/csv', headers={'Content-Disposition': 'attachment; filename="cleaned_reviews.csv"'})
 
 @app.route('/export/campaigns')
 def export_campaigns():
@@ -102,7 +102,7 @@ def export_campaigns():
     w = csv.writer(si)
     w.writerow(cols)
     for r in rows: w.writerow(list(r))
-    return Response(si.getvalue(), mimetype='text/csv', headers={'Content-Disposition': 'attachment;filename=campaigns.csv'})
+    return Response(si.getvalue(), mimetype='text/csv', headers={'Content-Disposition': 'attachment; filename="campaigns.csv"'})
 
 @app.route('/export/voice')
 def export_voice():
@@ -120,7 +120,7 @@ def export_voice():
         w.writerow(cols)
         for r in rows: w.writerow(list(r))
     conn.close()
-    return Response(si.getvalue(), mimetype='text/csv', headers={'Content-Disposition': 'attachment;filename=voice_analysis.csv'})
+    return Response(si.getvalue(), mimetype='text/csv', headers={'Content-Disposition': 'attachment; filename="voice_analysis.csv"'})
 
 @app.route('/export/all')
 def export_all():
